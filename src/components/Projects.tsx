@@ -14,7 +14,7 @@ const projects = [
     title: "E-Commerce REST API",
     description: "Implemented RESTful APIs for products, categories, cart operations, orders, wallet management, and users. Built secure authentication using JWT with a custom user model and role-based access. Developed asynchronous background jobs using Celery with Redis for notifications and system tasks. Integrated Stripe for payment processing and webhook-based wallet transactions. Designed modular architecture with separate apps and configured containerized development using Docker and Docker Compose.",
     tech: ["Django 6", "DRF", "PostgreSQL", "Redis", "Celery", "JWT", "Docker", "Stripe"],
-    github: "https://github.com/codekat123/E-commerce",
+    github: "https://github.com/codekat123/E-commerce_API",
   },
   {
     title: "CareMate - Healthcare Platform",
