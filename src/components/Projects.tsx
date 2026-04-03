@@ -4,6 +4,13 @@ import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 const projects = [
   {
+    title: "Publisher Statistics Service – Open Source Contribution",
+    description: "Engineered a scalable statistics endpoint for aggregated publisher data in an open-source CMS. Reduced database load with Redis-based caching and fallback recomputation logic. Designed background task pipeline using Celery with periodic scheduling (Celery Beat) and ensured data consistency through event-driven cache invalidation using Django signals.",
+    tech: ["Django", "Django Ninja", "Redis", "Celery", "PostgreSQL"],
+    github: "https://github.com/Itqan-community/cms-backend/pull/257",
+    isContribution: true,
+  },
+  {
     title: "Modular E-commerce REST API",
     description: "RESTful APIs for products, categories, cart, orders, coupons, referrals, and user profiles. JWT auth with OTP signup, email verification, Redis-backed cart with caching and throttling, Celery for background jobs, merchant dashboard with analytics, personalized recommendations, and AI chat assistant.",
     tech: ["Django 5", "DRF", "PostgreSQL", "Redis", "Celery", "JWT"],
