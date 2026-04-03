@@ -65,6 +65,11 @@ const Projects = () => {
               className="group bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl border border-border/50 rounded-3xl p-8 hover:border-primary/40 hover:shadow-elevated hover:shadow-primary/20 transition-all duration-500 hover:-translate-y-3"
               style={{ transitionDelay: `${index * 100}ms` }}
             >
+              {project.isContribution && (
+                <span className="inline-block px-3 py-1 text-xs font-semibold bg-accent/20 text-accent rounded-full border border-accent/30 mb-3">
+                  Open Source
+                </span>
+              )}
               <h3 className="text-2xl md:text-3xl font-bold mb-5 text-foreground group-hover:text-primary transition-colors duration-300">
                 {project.title}
               </h3>
