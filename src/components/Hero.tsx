@@ -81,22 +81,24 @@ const Hero = () => {
           </Button>
         </div>
 
-        <div className={`flex gap-8 justify-center transition-all duration-700 ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`} style={{ transitionDelay: '1000ms' }}>
+        <div className={`flex gap-6 justify-center transition-all duration-700 ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`} style={{ transitionDelay: '1000ms' }}>
           <a
             href="https://github.com/codekat123"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-muted-foreground hover:text-primary transition-all duration-300 hover:scale-125 hover:-translate-y-1"
+            className="flex items-center gap-2 px-6 py-3 rounded-xl border-2 border-primary/40 bg-primary/10 text-foreground hover:bg-primary hover:text-primary-foreground hover:border-primary hover:shadow-lg hover:shadow-primary/30 hover:scale-105 transition-all duration-300 font-medium"
           >
-            <Github className="w-7 h-7" />
+            <Github className="w-6 h-6" />
+            <span>GitHub</span>
           </a>
           <a
             href="https://www.linkedin.com/in/ahmed-gaber-509b88359"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-muted-foreground hover:text-primary transition-all duration-300 hover:scale-125 hover:-translate-y-1"
+            className="flex items-center gap-2 px-6 py-3 rounded-xl border-2 border-primary/40 bg-primary/10 text-foreground hover:bg-primary hover:text-primary-foreground hover:border-primary hover:shadow-lg hover:shadow-primary/30 hover:scale-105 transition-all duration-300 font-medium"
           >
-            <Linkedin className="w-7 h-7" />
+            <Linkedin className="w-6 h-6" />
+            <span>LinkedIn</span>
           </a>
         </div>
       </div>
