@@ -29,11 +29,6 @@ const techCategories = [
     title: "Programming",
     items: ["Python", "C", "OOP", "Design Patterns", "SOLID Principles"],
   },
-  {
-    icon: Code2,
-    title: "Frontend (Basics)",
-    items: ["HTML", "CSS"],
-  },
 ];
 
 const TechStack = () => {
