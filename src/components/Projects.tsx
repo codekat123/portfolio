@@ -40,6 +40,12 @@ const projects = [
     tech: ["Django 5", "DRF", "PostgreSQL", "Redis", "Celery", "PayPal SDK"],
     github: "https://github.com/codekat123/Coursera_clone",
   },
+  {
+    title: "InstaOrder - Telegram Bot for Product Ordering",
+    description: "A Django-based Telegram bot enabling customers to browse products, place orders, and manage purchases through a conversational interface. Features product catalog, order management (create, confirm, cancel), phone number verification, order history tracking, interactive inline keyboards, and rate limiting protection.",
+    tech: ["Django 6", "DRF", "PostgreSQL", "Telegram Bot API", "Gunicorn"],
+    github: "https://github.com/codekat123/instaorder",
+  },
 ];
 
 const Projects = () => {
