@@ -6,7 +6,7 @@ const techCategories = [
     icon: Code2,
     title: "Backend & Core",
     items: [
-      "Django 5",
+      "Django",
       "Django REST Framework",
       "JWT Authentication (SimpleJWT)",
       "Django Channels (WebSockets)",
