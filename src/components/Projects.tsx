@@ -13,13 +13,13 @@ const projects = [
   {
     title: "E-Commerce REST API",
     description: "Implemented RESTful APIs for products, categories, cart operations, orders, wallet management, and users. Built secure authentication using JWT with a custom user model and role-based access. Developed asynchronous background jobs using Celery with Redis for notifications and system tasks. Integrated Stripe for payment processing and webhook-based wallet transactions. Designed modular architecture with separate apps and configured containerized development using Docker and Docker Compose.",
-    tech: ["Django 6", "DRF", "PostgreSQL", "Redis", "Celery", "JWT", "Docker", "Stripe"],
+    tech: ["Django", "DRF", "PostgreSQL", "Redis", "Celery", "JWT", "Docker", "Stripe"],
     github: "https://github.com/codekat123/E-commerce_API",
   },
   {
     title: "CareMate - Healthcare Platform",
     description: "Healthcare platform with appointments, patient profiles, doctor dashboards, AI assistant, and real-time chat. Features email verification, JWT auth, appointment scheduling, doctor reporting, AI assistant via Google Generative AI, and Swagger/Redoc documentation.",
-    tech: ["Django 5", "DRF", "Channels", "Celery", "Redis", "AI API"],
+    tech: ["Django", "DRF", "Channels", "Celery", "Redis", "AI API"],
     github: "https://github.com/codekat123/care-mate",
   },
   {
@@ -31,19 +31,19 @@ const projects = [
   {
     title: "Khamsat-Style Freelance Marketplace",
     description: "Freelancer marketplace backend with services, orders, payments, wallet system with signals, ratings, and live chat. Full order lifecycle, real-time chat with Channels, scheduled tasks with Celery Beat, and API docs via drf-spectacular.",
-    tech: ["Django 5.2", "DRF", "Channels", "Celery", "Redis", "PostgreSQL"],
+    tech: ["Django", "DRF", "Channels", "Celery", "Redis", "PostgreSQL"],
     github: "https://github.com/codekat123/clone-khamsat",
   },
   {
     title: "Coursera-like Backend Platform",
     description: "Learning platform backend with users, courses, modules, quizzes, enrollments, and PayPal payments. Custom user model for Students/Instructors, modular course system, JWT auth, PayPal order create/capture, Redis caching, and Celery workers.",
-    tech: ["Django 5", "DRF", "PostgreSQL", "Redis", "Celery", "PayPal SDK"],
+    tech: ["Django", "DRF", "PostgreSQL", "Redis", "Celery", "PayPal SDK"],
     github: "https://github.com/codekat123/Coursera_clone",
   },
   {
     title: "InstaOrder - Telegram Bot for Product Ordering",
     description: "A Django-based Telegram bot enabling customers to browse products, place orders, and manage purchases through a conversational interface. Features product catalog, order management (create, confirm, cancel), phone number verification, order history tracking, interactive inline keyboards, and rate limiting protection.",
-    tech: ["Django 6", "DRF", "PostgreSQL", "Telegram Bot API", "Gunicorn"],
+    tech: ["Django", "DRF", "PostgreSQL", "Telegram Bot API", "Gunicorn"],
     github: "https://github.com/codekat123/instaorder",
   },
 ];
