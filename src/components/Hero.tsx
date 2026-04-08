@@ -74,7 +74,7 @@ const Hero = () => {
             asChild
             className="border-2 border-primary/30 text-foreground hover:bg-primary/10 hover:border-primary text-lg px-10 py-7 rounded-xl hover:scale-105 hover:shadow-lg transition-all duration-300 font-medium"
           >
-            <a href={`${import.meta.env.BASE_URL}Ahmed_gaber_Backend_developer.pdf`} download>
+            <a href={`${import.meta.env.BASE_URL}Ahmed_Gaber_Backend_Engineer.pdf`} download>
               <Download className="w-5 h-5 mr-2" />
               Download CV
             </a>
