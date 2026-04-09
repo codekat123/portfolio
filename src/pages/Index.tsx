@@ -2,6 +2,7 @@ import Hero from "@/components/Hero";
 import About from "@/components/About";
 import TechStack from "@/components/TechStack";
 import Projects from "@/components/Projects";
+import Experience from "@/components/Experience";
 import Contact from "@/components/Contact";
 
 const Index = () => {
@@ -11,6 +12,7 @@ const Index = () => {
       <About />
       <TechStack />
       <Projects />
+      <Experience />
       <Contact />
       
       <footer className="py-8 px-6 border-t border-border">
