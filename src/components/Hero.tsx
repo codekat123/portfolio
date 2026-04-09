@@ -77,7 +77,8 @@ const Hero = () => {
         </h1>
         
         <h2 className={`text-2xl md:text-4xl text-foreground/90 mb-8 font-light transition-all duration-700 ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`} style={{ transitionDelay: '400ms' }}>
-          Backend Developer <span className="text-primary">(Python | Django | DRF)</span>
+          <span className="text-primary">{titles[titleIndex].substring(0, charIndex)}</span>
+          <span className="animate-pulse text-primary">|</span>
         </h2>
         
         <p className={`text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-12 leading-relaxed transition-all duration-700 ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`} style={{ transitionDelay: '600ms' }}>
