@@ -1,14 +1,47 @@
 import { Github, Linkedin, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import profilePhoto from "@/assets/profile-photo.jpeg";
+
+const titles = [
+  "Backend Engineer",
+  "Python Developer",
+  "Django Specialist",
+  "API Architect",
+  "DRF Expert",
+];
 
 const Hero = () => {
   const [mounted, setMounted] = useState(false);
+  const [titleIndex, setTitleIndex] = useState(0);
+  const [charIndex, setCharIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
 
   useEffect(() => {
     setMounted(true);
   }, []);
+
+  useEffect(() => {
+    const current = titles[titleIndex];
+    const timeout = setTimeout(() => {
+      if (!isDeleting) {
+        if (charIndex < current.length) {
+          setCharIndex(charIndex + 1);
+        } else {
+          setTimeout(() => setIsDeleting(true), 1500);
+        }
+      } else {
+        if (charIndex > 0) {
+          setCharIndex(charIndex - 1);
+        } else {
+          setIsDeleting(false);
+          setTitleIndex((titleIndex + 1) % titles.length);
+        }
+      }
+    }, isDeleting ? 50 : 100);
+
+    return () => clearTimeout(timeout);
+  }, [charIndex, isDeleting, titleIndex]);
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -44,7 +77,8 @@ const Hero = () => {
         </h1>
         
         <h2 className={`text-2xl md:text-4xl text-foreground/90 mb-8 font-light transition-all duration-700 ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`} style={{ transitionDelay: '400ms' }}>
-          Backend Developer <span className="text-primary">(Python | Django | DRF)</span>
+          <span className="text-primary">{titles[titleIndex].substring(0, charIndex)}</span>
+          <span className="animate-pulse text-primary">|</span>
         </h2>
         
         <p className={`text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-12 leading-relaxed transition-all duration-700 ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`} style={{ transitionDelay: '600ms' }}>
