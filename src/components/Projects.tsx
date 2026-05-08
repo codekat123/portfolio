@@ -1,4 +1,4 @@
-import { Github } from "lucide-react";
+import { Github, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
@@ -15,6 +15,7 @@ const projects = [
     description: "Implemented RESTful APIs for products, categories, cart operations, orders, wallet management, and users. Built secure authentication using JWT with a custom user model and role-based access. Developed asynchronous background jobs using Celery with Redis for notifications and system tasks. Integrated Stripe for payment processing and webhook-based wallet transactions. Designed modular architecture with separate apps and configured containerized development using Docker and Docker Compose.",
     tech: ["Django", "DRF", "PostgreSQL", "Redis", "Celery", "JWT", "Docker", "Stripe"],
     github: "https://github.com/codekat123/E-commerce_API",
+    liveDemo: "https://ahmed-api.duckdns.org/swagger/",
   },
   {
     title: "CareMate - Healthcare Platform",
@@ -27,6 +28,7 @@ const projects = [
     description: "Real-time messaging app with private chats, groups, read receipts, and admin features. Built with Django Channels and WebSockets for live messaging, OTP signup, and JWT authentication.",
     tech: ["Django", "DRF", "Channels", "WebSockets", "PostgreSQL", "Docker"],
     github: "https://github.com/codekat123/WhatsApp-clone",
+    liveDemo: "https://whats-clone-ahmed-gaber.duckdns.org/api/docs/",
   },
   {
     title: "Khamsat-Style Freelance Marketplace",
@@ -95,17 +97,31 @@ const Projects = () => {
                 ))}
               </div>
               
-              <Button
-                asChild
-                size="lg"
-                className="w-full bg-primary hover:bg-primary/90 text-primary-foreground hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-primary/30 rounded-xl font-medium relative overflow-hidden group"
-              >
-                <a href={project.github} target="_blank" rel="noopener noreferrer" className="relative z-10">
-                  <Github className="w-4 h-4 mr-2" />
-                  View Code
-                  <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
-                </a>
-              </Button>
+              <div className={`grid ${project.liveDemo ? 'grid-cols-1 sm:grid-cols-2' : 'grid-cols-1'} gap-3`}>
+                <Button
+                  asChild
+                  size="lg"
+                  className="w-full bg-primary hover:bg-primary/90 text-primary-foreground hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-primary/30 rounded-xl font-medium"
+                >
+                  <a href={project.github} target="_blank" rel="noopener noreferrer">
+                    <Github className="w-4 h-4 mr-2" />
+                    View Code
+                  </a>
+                </Button>
+                {project.liveDemo && (
+                  <Button
+                    asChild
+                    size="lg"
+                    variant="outline"
+                    className="w-full border-primary/40 text-primary hover:bg-primary/10 hover:scale-105 transition-all duration-300 rounded-xl font-medium"
+                  >
+                    <a href={project.liveDemo} target="_blank" rel="noopener noreferrer">
+                      <ExternalLink className="w-4 h-4 mr-2" />
+                      Live Demo
+                    </a>
+                  </Button>
+                )}
+              </div>
             </div>
           ))}
         </div>
