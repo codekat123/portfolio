@@ -18,12 +18,6 @@ const projects = [
     liveDemo: "https://ahmed-api.duckdns.org/swagger/",
   },
   {
-    title: "CareMate - Healthcare Platform",
-    description: "Healthcare platform with appointments, patient profiles, doctor dashboards, AI assistant, and real-time chat. Features email verification, JWT auth, appointment scheduling, doctor reporting, AI assistant via Google Generative AI, and Swagger/Redoc documentation.",
-    tech: ["Django", "DRF", "Channels", "Celery", "Redis", "AI API"],
-    github: "https://github.com/codekat123/care-mate",
-  },
-  {
     title: "WhatsApp Clone (Real-Time Chat)",
     description: "Real-time messaging app with private chats, groups, read receipts, and admin features. Built with Django Channels and WebSockets for live messaging, OTP signup, and JWT authentication.",
     tech: ["Django", "DRF", "Channels", "WebSockets", "PostgreSQL", "Docker"],
@@ -31,16 +25,22 @@ const projects = [
     liveDemo: "https://whats-clone-ahmed-gaber.duckdns.org/api/docs/",
   },
   {
-    title: "Khamsat-Style Freelance Marketplace",
-    description: "Freelancer marketplace backend with services, orders, payments, wallet system with signals, ratings, and live chat. Full order lifecycle, real-time chat with Channels, scheduled tasks with Celery Beat, and API docs via drf-spectacular.",
-    tech: ["Django", "DRF", "Channels", "Celery", "Redis", "PostgreSQL"],
-    github: "https://github.com/codekat123/clone-khamsat",
-  },
-  {
     title: "Coursera-like Backend Platform",
     description: "Learning platform backend with users, courses, modules, quizzes, enrollments, and PayPal payments. Custom user model for Students/Instructors, modular course system, JWT auth, PayPal order create/capture, Redis caching, and Celery workers.",
     tech: ["Django", "DRF", "PostgreSQL", "Redis", "Celery", "PayPal SDK"],
     github: "https://github.com/codekat123/Coursera_clone",
+  },
+  {
+    title: "CareMate - Healthcare Platform",
+    description: "Healthcare platform with appointments, patient profiles, doctor dashboards, AI assistant, and real-time chat. Features email verification, JWT auth, appointment scheduling, doctor reporting, AI assistant via Google Generative AI, and Swagger/Redoc documentation.",
+    tech: ["Django", "DRF", "Channels", "Celery", "Redis", "AI API"],
+    github: "https://github.com/codekat123/care-mate",
+  },
+  {
+    title: "Khamsat-Style Freelance Marketplace",
+    description: "Freelancer marketplace backend with services, orders, payments, wallet system with signals, ratings, and live chat. Full order lifecycle, real-time chat with Channels, scheduled tasks with Celery Beat, and API docs via drf-spectacular.",
+    tech: ["Django", "DRF", "Channels", "Celery", "Redis", "PostgreSQL"],
+    github: "https://github.com/codekat123/clone-khamsat",
   },
   {
     title: "InstaOrder - Telegram Bot for Product Ordering",
