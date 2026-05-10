@@ -14,25 +14,29 @@ const About = () => {
         </div>
         
         <div className="bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl border border-border/50 rounded-3xl p-10 md:p-12 shadow-elevated hover:shadow-primary/10 hover:border-primary/30 transition-all duration-500 group hover:-translate-y-1">
-          <p className="text-lg md:text-xl text-foreground leading-relaxed mb-8">
-            Backend developer specializing in{' '}
+          <p className="text-lg md:text-xl text-foreground leading-relaxed mb-6">
+            I'm a second-year{' '}
+            <span className="text-primary font-semibold">Management Information Systems</span>{' '}
+            student at Mansoura Higher Institute, currently looking for a{' '}
+            <span className="text-primary font-semibold">backend internship</span>{' '}
+            where I can keep learning from real engineers and ship production code that actually gets used.
+          </p>
+
+          <p className="text-lg md:text-xl text-foreground leading-relaxed mb-6">
+            I work mostly with{' '}
             <span className="text-primary font-semibold">Python</span>,{' '}
             <span className="text-primary font-semibold">Django</span>, and{' '}
-            <span className="text-primary font-semibold">Django REST Framework</span>.
-            Experienced in building RESTful APIs, authentication systems, asynchronous tasks, caching, and real-time features.
+            <span className="text-primary font-semibold">Django REST Framework</span>{' '}
+            — building RESTful APIs, authentication flows, and real-time features. I enjoy the parts most people skip: clean architecture, sensible database design, and the small details that keep a backend boring in the best way.
           </p>
-          
-          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-10">
-            Strong understanding of relational databases and clean backend architecture. Proficient with{' '}
-            <span className="text-primary font-semibold">Django Channels (WebSockets)</span>,{' '}
-            <span className="text-primary font-semibold">Celery & Redis</span> for async tasks and caching,{' '}
-            <span className="text-primary font-semibold">JWT Authentication</span>, and{' '}
-            <span className="text-primary font-semibold">Docker</span> for containerization.
+
+          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+            Day to day I reach for{' '}
+            <span className="text-primary font-semibold">Django Channels</span>{' '}for WebSockets,{' '}
+            <span className="text-primary font-semibold">Celery & Redis</span>{' '}for async tasks and caching,{' '}
+            <span className="text-primary font-semibold">JWT</span>{' '}for auth, and{' '}
+            <span className="text-primary font-semibold">Docker</span>{' '}to make sure it runs the same everywhere. Outside of class I contribute to open source and ship side projects to sharpen what I learn.
           </p>
-          
-          
-          
-          
         </div>
       </div>
     </section>;
