@@ -89,9 +89,18 @@ const Projects = () => {
                 {project.title}
               </h3>
               
-              <p className="text-muted-foreground mb-7 leading-relaxed text-base">
+              <p className="text-muted-foreground mb-5 leading-relaxed text-base">
                 {project.description}
               </p>
+
+              {project.impact && (
+                <div className="flex items-start gap-3 mb-7 p-4 rounded-xl bg-primary/5 border border-primary/20">
+                  <Zap className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                  <p className="text-sm md:text-base text-foreground/90 leading-relaxed font-medium">
+                    {project.impact}
+                  </p>
+                </div>
+              )}
               
               <div className="flex flex-wrap gap-2 mb-8">
                 {project.tech.map((tech, techIndex) => (
