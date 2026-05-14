@@ -127,7 +127,7 @@ const Projects = () => {
                 ))}
               </div>
               
-              <div className={`grid ${project.liveDemo ? 'grid-cols-1 sm:grid-cols-2' : 'grid-cols-1'} gap-3`}>
+              <div className={`grid ${project.liveDemo || project.pypi ? 'grid-cols-1 sm:grid-cols-2' : 'grid-cols-1'} gap-3`}>
                 <Button
                   asChild
                   size="lg"
@@ -138,6 +138,19 @@ const Projects = () => {
                     View Code
                   </a>
                 </Button>
+                {project.pypi && (
+                  <Button
+                    asChild
+                    size="lg"
+                    variant="outline"
+                    className="w-full border-primary/40 text-primary hover:bg-primary/10 hover:scale-105 transition-all duration-300 rounded-xl font-medium"
+                  >
+                    <a href={project.pypi} target="_blank" rel="noopener noreferrer">
+                      <Package className="w-4 h-4 mr-2" />
+                      PyPI Package
+                    </a>
+                  </Button>
+                )}
                 {project.liveDemo && (
                   <Button
                     asChild
