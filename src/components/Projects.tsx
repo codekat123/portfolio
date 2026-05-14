@@ -1,8 +1,17 @@
-import { Github, ExternalLink, Zap } from "lucide-react";
+import { Github, ExternalLink, Zap, Package } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 const projects = [
+  {
+    title: "django-api-profiler – PyPI Package",
+    description: "A lightweight Django middleware package for API profiling, endpoint analytics, and performance monitoring — with N+1 query detection, automatic regression detection, hourly endpoint aggregation, webhook alerts, and an async Celery pipeline. Published on PyPI and production-ready.",
+    impact: "Published on PyPI with N+1 detection, regression alerts, and async Celery analytics pipeline",
+    tech: ["Python", "Django", "Celery", "Redis", "PostgreSQL", "Docker"],
+    github: "https://github.com/codekat123/django-api-profiler/tree/master",
+    pypi: "https://pypi.org/project/django-api-profiler",
+    isContribution: true,
+  },
   {
     title: "Publisher Statistics Service – Open Source Contribution",
     description: "Engineered a scalable statistics endpoint for aggregated publisher data in an open-source CMS. Reduced database load with Redis-based caching and fallback recomputation logic. Designed background task pipeline using Celery with periodic scheduling (Celery Beat) and ensured data consistency through event-driven cache invalidation using Django signals.",
@@ -85,6 +94,11 @@ const Projects = () => {
                   Open Source
                 </span>
               )}
+              {project.pypi && (
+                <span className="inline-block px-3 py-1 text-xs font-semibold bg-primary/20 text-primary rounded-full border border-primary/40 mb-3 ml-2">
+                  PyPI Published
+                </span>
+              )}
               <h3 className="text-2xl md:text-3xl font-bold mb-5 text-foreground group-hover:text-primary transition-colors duration-300">
                 {project.title}
               </h3>
@@ -113,7 +127,7 @@ const Projects = () => {
                 ))}
               </div>
               
-              <div className={`grid ${project.liveDemo ? 'grid-cols-1 sm:grid-cols-2' : 'grid-cols-1'} gap-3`}>
+              <div className={`grid ${project.liveDemo || project.pypi ? 'grid-cols-1 sm:grid-cols-2' : 'grid-cols-1'} gap-3`}>
                 <Button
                   asChild
                   size="lg"
@@ -124,6 +138,19 @@ const Projects = () => {
                     View Code
                   </a>
                 </Button>
+                {project.pypi && (
+                  <Button
+                    asChild
+                    size="lg"
+                    variant="outline"
+                    className="w-full border-primary/40 text-primary hover:bg-primary/10 hover:scale-105 transition-all duration-300 rounded-xl font-medium"
+                  >
+                    <a href={project.pypi} target="_blank" rel="noopener noreferrer">
+                      <Package className="w-4 h-4 mr-2" />
+                      PyPI Package
+                    </a>
+                  </Button>
+                )}
                 {project.liveDemo && (
                   <Button
                     asChild
