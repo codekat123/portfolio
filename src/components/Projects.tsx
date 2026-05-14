@@ -1,4 +1,4 @@
-import { Github, ExternalLink, Zap } from "lucide-react";
+import { Github, ExternalLink, Zap, Package } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
