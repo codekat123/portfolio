@@ -4,6 +4,15 @@ import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 const projects = [
   {
+    title: "django-api-profiler – PyPI Package",
+    description: "A lightweight Django middleware package for API profiling, endpoint analytics, and performance monitoring — with N+1 query detection, automatic regression detection, hourly endpoint aggregation, webhook alerts, and an async Celery pipeline. Published on PyPI and production-ready.",
+    impact: "Published on PyPI with N+1 detection, regression alerts, and async Celery analytics pipeline",
+    tech: ["Python", "Django", "Celery", "Redis", "PostgreSQL", "Docker"],
+    github: "https://github.com/codekat123/django-api-profiler/tree/master",
+    pypi: "https://pypi.org/project/django-api-profiler",
+    isContribution: true,
+  },
+  {
     title: "Publisher Statistics Service – Open Source Contribution",
     description: "Engineered a scalable statistics endpoint for aggregated publisher data in an open-source CMS. Reduced database load with Redis-based caching and fallback recomputation logic. Designed background task pipeline using Celery with periodic scheduling (Celery Beat) and ensured data consistency through event-driven cache invalidation using Django signals.",
     impact: "Cut stats endpoint DB hits by ~90% via Redis caching + signal-driven invalidation",
