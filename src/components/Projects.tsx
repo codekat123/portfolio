@@ -106,7 +106,7 @@ const Projects = () => {
                 </div>
               )}
 
-              <div className="relative space-y-3">
+              <div className="relative space-y-3 flex-grow">
                 <h3 className={`text-2xl md:text-3xl font-bold leading-tight transition-colors duration-300 ${project.pypi ? 'text-primary group-hover:text-primary/90' : 'text-foreground group-hover:text-primary'}`}>
                   {project.title}
                 </h3>
