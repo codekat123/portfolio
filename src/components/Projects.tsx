@@ -82,52 +82,62 @@ const Projects = () => {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {projects.map((project, index) => (
             <div
               key={index}
-              className="group bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl border border-border/50 rounded-3xl p-8 hover:border-primary/40 hover:shadow-elevated hover:shadow-primary/20 transition-all duration-500 hover:-translate-y-3"
+              className="group relative flex flex-col gap-6 bg-card/40 backdrop-blur-xl border border-border/40 rounded-[2rem] p-8 hover:border-primary/40 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_0_50px_-12px_hsl(var(--primary)/0.25)] overflow-hidden"
               style={{ transitionDelay: `${index * 100}ms` }}
             >
-              {project.isContribution && (
-                <span className="inline-block px-3 py-1 text-xs font-semibold bg-accent/20 text-accent rounded-full border border-accent/30 mb-3">
-                  Open Source
-                </span>
+              <div className="absolute inset-0 rounded-[2rem] bg-gradient-to-br from-primary/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+
+              {(project.isContribution || project.pypi) && (
+                <div className="relative flex flex-wrap gap-2">
+                  {project.isContribution && (
+                    <span className="px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-wider bg-primary/10 text-primary border border-primary/20">
+                      Open Source
+                    </span>
+                  )}
+                  {project.pypi && (
+                    <span className="px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-wider bg-card text-foreground/80 border border-border">
+                      PyPI Published
+                    </span>
+                  )}
+                </div>
               )}
-              {project.pypi && (
-                <span className="inline-block px-3 py-1 text-xs font-semibold bg-primary/20 text-primary rounded-full border border-primary/40 mb-3 ml-2">
-                  PyPI Published
-                </span>
-              )}
-              <h3 className="text-2xl md:text-3xl font-bold mb-5 text-foreground group-hover:text-primary transition-colors duration-300">
-                {project.title}
-              </h3>
-              
-              <p className="text-muted-foreground mb-5 leading-relaxed text-base">
-                {project.description}
-              </p>
+
+              <div className="relative space-y-3">
+                <h3 className={`text-2xl md:text-3xl font-bold leading-tight transition-colors duration-300 ${project.pypi ? 'text-primary group-hover:text-primary/90' : 'text-foreground group-hover:text-primary'}`}>
+                  {project.title}
+                </h3>
+                <p className="text-muted-foreground leading-relaxed text-sm md:text-base">
+                  {project.description}
+                </p>
+              </div>
 
               {project.impact && (
-                <div className="flex items-start gap-3 mb-7 p-4 rounded-xl bg-primary/5 border border-primary/20">
-                  <Zap className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                  <p className="text-sm md:text-base text-foreground/90 leading-relaxed font-medium">
+                <div className="relative flex items-start gap-4 p-5 rounded-2xl bg-background/60 border border-primary/10">
+                  <div className="mt-0.5 p-2 rounded-lg bg-primary/10 shrink-0">
+                    <Zap className="w-4 h-4 text-primary" />
+                  </div>
+                  <p className="text-sm text-foreground/85 leading-relaxed">
                     {project.impact}
                   </p>
                 </div>
               )}
-              
-              <div className="flex flex-wrap gap-2 mb-8">
+
+              <div className="relative flex flex-wrap gap-2">
                 {project.tech.map((tech, techIndex) => (
                   <span
                     key={techIndex}
-                    className="px-4 py-2 text-sm font-medium bg-primary/10 text-primary rounded-xl border border-primary/20 hover:bg-primary/20 hover:scale-110 hover:shadow-lg hover:shadow-primary/20 transition-all duration-200 cursor-default"
+                    className="px-3 py-1.5 text-xs font-medium bg-background/80 text-muted-foreground rounded-lg border border-border hover:border-primary/40 hover:text-primary transition-colors duration-200 cursor-default"
                   >
                     {tech}
                   </span>
                 ))}
               </div>
-              
-              <div className={`grid ${project.liveDemo || project.pypi ? 'grid-cols-1 sm:grid-cols-2' : 'grid-cols-1'} gap-3`}>
+
+              <div className={`relative pt-2 mt-auto grid ${project.liveDemo || project.pypi ? 'grid-cols-1 sm:grid-cols-2' : 'grid-cols-1'} gap-3`}>
                 <Button
                   asChild
                   size="lg"
