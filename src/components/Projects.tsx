@@ -86,43 +86,55 @@ const Projects = () => {
           {projects.map((project, index) => (
             <div
               key={index}
-              className="group relative flex flex-col gap-6 bg-card/40 backdrop-blur-xl border border-border/40 rounded-[2rem] p-8 hover:border-primary/40 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_0_50px_-12px_hsl(var(--primary)/0.25)] overflow-hidden"
+              className="group relative flex flex-col gap-6 bg-card/50 backdrop-blur-2xl border border-white/5 rounded-[2.5rem] p-8 md:p-10 transition-all duration-500 hover:-translate-y-2 hover:border-primary/30 hover:shadow-[0_0_80px_-20px_hsl(var(--primary)/0.25)] overflow-hidden"
               style={{ transitionDelay: `${index * 100}ms` }}
             >
-              <div className="absolute inset-0 rounded-[2rem] bg-gradient-to-br from-primary/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+              {/* Ambient glow */}
+              <div className="absolute -top-24 -right-24 w-64 h-64 bg-primary/5 rounded-full blur-[100px] group-hover:bg-primary/10 transition-colors duration-500 pointer-events-none"></div>
 
               {(project.isContribution || project.pypi) && (
-                <div className="relative flex flex-wrap gap-2">
+                <div className="relative flex flex-wrap gap-3">
                   {project.isContribution && (
-                    <span className="px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-wider bg-primary/10 text-primary border border-primary/20">
+                    <span className="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest bg-primary/10 text-primary border border-primary/20 shadow-[0_0_15px_-3px_hsl(var(--primary)/0.3)]">
                       Open Source
                     </span>
                   )}
                   {project.pypi && (
-                    <span className="px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-wider bg-card text-foreground/80 border border-border">
+                    <span className="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest bg-white/5 text-foreground/50 border border-white/10">
                       PyPI Published
                     </span>
                   )}
                 </div>
               )}
 
-              <div className="relative space-y-3 flex-grow">
-                <h3 className={`text-2xl md:text-3xl font-bold leading-tight transition-colors duration-300 ${project.pypi ? 'text-primary group-hover:text-primary/90' : 'text-foreground group-hover:text-primary'}`}>
-                  {project.title}
+              <div className="relative space-y-4 flex-grow">
+                <h3 className="text-2xl md:text-3xl font-bold tracking-tight leading-tight text-foreground">
+                  {project.pypi ? (
+                    <>
+                      django-api-profiler{" "}
+                      <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-indigo-400">
+                        – PyPI Package
+                      </span>
+                    </>
+                  ) : (
+                    project.title
+                  )}
                 </h3>
-                <p className="text-muted-foreground leading-relaxed text-sm md:text-base">
+                <p className="text-muted-foreground leading-relaxed text-base font-light">
                   {project.description}
                 </p>
               </div>
 
               {project.impact && (
-                <div className="relative flex items-start gap-4 p-5 rounded-2xl bg-background/60 border border-primary/10">
-                  <div className="mt-0.5 p-2 rounded-lg bg-primary/10 shrink-0">
-                    <Zap className="w-4 h-4 text-primary" />
+                <div className="relative bg-gradient-to-r from-primary/10 to-transparent border-l-2 border-primary px-6 py-4 rounded-r-2xl">
+                  <div className="flex items-start gap-4">
+                    <div className="mt-1 p-2 rounded-lg bg-primary/20 shadow-[0_0_10px_hsl(var(--primary)/0.2)] shrink-0">
+                      <Zap className="w-4 h-4 text-primary" />
+                    </div>
+                    <p className="text-sm md:text-base text-foreground/90 leading-snug">
+                      {project.impact}
+                    </p>
                   </div>
-                  <p className="text-sm text-foreground/85 leading-relaxed">
-                    {project.impact}
-                  </p>
                 </div>
               )}
 
@@ -130,18 +142,18 @@ const Projects = () => {
                 {project.tech.map((tech, techIndex) => (
                   <span
                     key={techIndex}
-                    className="px-3 py-1.5 text-xs font-medium bg-background/80 text-muted-foreground rounded-lg border border-border hover:border-primary/40 hover:text-primary transition-colors duration-200 cursor-default"
+                    className="px-3 py-1.5 rounded-lg bg-background/80 border border-white/5 text-xs font-medium text-foreground/70 font-mono hover:border-primary/40 hover:text-primary transition-colors duration-200 cursor-default"
                   >
                     {tech}
                   </span>
                 ))}
               </div>
 
-              <div className={`relative pt-2 mt-auto grid ${project.liveDemo || project.pypi ? 'grid-cols-1 sm:grid-cols-2' : 'grid-cols-1'} gap-3`}>
+              <div className={`relative pt-2 mt-auto flex flex-col sm:flex-row gap-3`}>
                 <Button
                   asChild
                   size="lg"
-                  className="w-full bg-primary hover:bg-primary/90 text-primary-foreground hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-primary/30 rounded-xl font-medium"
+                  className="flex-1 bg-primary hover:bg-primary/90 text-primary-foreground font-bold rounded-2xl shadow-[0_10px_20px_-10px_hsl(var(--primary)/0.5)] hover:scale-[1.02] active:scale-95 transition-all duration-300"
                 >
                   <a href={project.github} target="_blank" rel="noopener noreferrer">
                     <Github className="w-4 h-4 mr-2" />
@@ -153,7 +165,7 @@ const Projects = () => {
                     asChild
                     size="lg"
                     variant="outline"
-                    className="w-full border-primary/40 text-primary hover:bg-primary/10 hover:scale-105 transition-all duration-300 rounded-xl font-medium"
+                    className="flex-1 bg-white/5 border-white/10 text-foreground hover:bg-white/10 hover:border-white/20 active:scale-95 rounded-2xl font-semibold transition-all"
                   >
                     <a href={project.pypi} target="_blank" rel="noopener noreferrer">
                       <Package className="w-4 h-4 mr-2" />
@@ -166,7 +178,7 @@ const Projects = () => {
                     asChild
                     size="lg"
                     variant="outline"
-                    className="w-full border-primary/40 text-primary hover:bg-primary/10 hover:scale-105 transition-all duration-300 rounded-xl font-medium"
+                    className="flex-1 bg-white/5 border-white/10 text-foreground hover:bg-white/10 hover:border-white/20 active:scale-95 rounded-2xl font-semibold transition-all"
                   >
                     <a href={project.liveDemo} target="_blank" rel="noopener noreferrer">
                       <ExternalLink className="w-4 h-4 mr-2" />
